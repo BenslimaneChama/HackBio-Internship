@@ -1,8 +1,8 @@
 # **Project Title: Exploring Python Dictionaries at Stage 0**  
 ### Team members: 
-*Chama Benslimane (leader)* ; GitHub profile : https://github.com/BenslimaneChama \n
-and \n
-*Mohammad Hicham Polo* ; GitHub profile : https://github.com/MohammadHichamPolo \n
+*Chama Benslimane (leader)* ; GitHub profile : https://github.com/BenslimaneChama
+and
+*Mohammad Hicham Polo* ; GitHub profile : https://github.com/MohammadHichamPolo
 **HackBio Internship - Stage 0 Task**
 
 ---
