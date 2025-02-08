@@ -9,7 +9,7 @@ and
 # Introduction : What’s a Python Dictionary?
 In Python, a dictionary is a data structure that allows us to store and organize data in key-value pairs. Think of it like a real-life dictionary. The key is like a word, and the value is the definition. For example, we can create a dictionary to store information about our team, where the keys are categories like names, emails, and hobbies, and the values are lists of the actual details.
 
-# Contxet of the project : 
+# Context of the project : 
 In this project, we created a dictionary that stores essential information for each team member, including their name, Slack username, email, hobby, country, discipline, and preferred programming language. 
 ```
 dictionary_name = {Key1 : Value1 , Key2 : Value2}
