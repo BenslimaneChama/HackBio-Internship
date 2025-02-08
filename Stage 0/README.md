@@ -14,8 +14,12 @@ In this project, we created a dictionary that stores essential information for e
 ```
 dictionary_name = {Key1 : Value1 , Key2 : Value2}
 ```
-
 By combining the data in each key, we could create a personalized introduction for every team member.
+Here is the corresponding video tutorial published on LinkedIn : 
+```
+https://www.linkedin.com/feed/update/urn:li:activity:7293763037985976320/
+```
+
 # Table by printing output exemple : 
 
 ```
