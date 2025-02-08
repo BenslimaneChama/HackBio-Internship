@@ -6,7 +6,7 @@ Team members :
 Chama Benslimane (Leader) ; GitHub : https://github.com/BenslimaneChama
 and
 Mohammad Hicham Polo ; GitHub : https://github.com/MohammadHichamPolo
-
+LinkedIn Video Link : https://www.linkedin.com/feed/update/urn:li:activity:7293763037985976320/
 Repository Link : https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%200%20
 '''
 
