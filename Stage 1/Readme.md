@@ -154,3 +154,13 @@ This Function has Two parameters :
 ```
 def hamming_distance(slack_username, X_username):
 ```
+### Input
+We input two usernames, as said, in the same lenth
+```
+hamming_distance("hello", "hallo")
+```
+### Output
+ Here's an example of Output, in the example given, we only have one different character, whcih means :
+ ```
+1
+```
