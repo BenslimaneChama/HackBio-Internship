@@ -7,7 +7,7 @@ This module contains functions developed by our team for the Stage 1 challenge i
 It includes functions for analyzing DNA sequences, generating bacterial growth curves, determining 80% density values and calculating the hamming distance between two str.
 
 GitHub Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%201
-LinkedIn Video: " Still recording ;) "
+LinkedIn Video: https://www.linkedin.com/feed/update/urn:li:ugcPost:7297001015092932608/
 """
 import random
 import pandas as pd
