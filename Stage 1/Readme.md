@@ -141,3 +141,16 @@ So here is an example of the input
 Densité max: 1.0
 ```
 ## 4th Function :  Calculates the hamming distance between two chains of characters
+This function calculates the Hamming distance between two chains of characters, that has the SAME length. The Hamming distance means the number of positions where the characters on the two strings differ.
+### Functionnalities 
+  - We input two chains of characters
+  - This function verfies is the inputs are on the same lenth (else it won't work)
+  - Compare the characters
+  - Gives us the distance
+### Function Parameters 
+This Function has Two parameters :
+    - `slack_username` : First chain of character 
+    - `X_username` : Second chain of character 
+```
+def hamming_distance(slack_username, X_username):
+```
