@@ -56,7 +56,7 @@ Amino Acid Sequences:
  
 
 ## 2nd Function : Simulationg Bacterial Growth
-This project simulate bacterial gorwth y generating curves representing different phases in the developement of a bacterial population. Which allow us to visulise those curves in a logarithmic scale, also it allow us to to animate this evolution over time. This pro
+this project allow us to creat curves that represent the various stages of a bacterial population's development, it simulates bacterial growth. This enables us to animate this evolution over time and visualize those curves on a logarithmic scale. This project is very useful for modeling or conducting research on bacterial proliferation.
 ### Functionnalities
 - Generating multiple growth curves
 - Visualization of data in logarithmic scale
@@ -74,7 +74,7 @@ In this fonction, we needed 5 parameters, that we are going to expain each of th
   - `raw_numbers` (int) : The number of growth curves that I want to generate
   - `starting_point` (float) : The initial nuber of cells.
   - `expo_start` (int) : This one is optional, we may or not indicate the beginning of the exponential phase.
-  - expo_end (int) : This one too is optional, we may or not indicate the end of the exponential phase
+  - `expo_end` (int) : This one too is optional, we may or not indicate the end of the exponential phase
 ```
 def generate_growth_curves(unit_type, time_period, col_numbers, raw_numbers, starting_point, expo_start=None, expo_end=None):
 ```
@@ -104,4 +104,40 @@ After execution, the first lines of the output will be as following, and of cour
 - **Stationary phase** : Nutrients are lacking, which results a slow growth (again a stable line)
 - **Decline phase** : Population declines, due to death
 ## 3rd function : Calculation of density at 80% of max value 
-This Function allow us to deteminate the moment where the bacterial density 
+This Function allow us to deteminate the moment where the bacterial density reaches 80% of it's maximal value from it's growth curve.
+This function is independant and at the same time, compatible with function 2. 
+### Libraries needed
+```
+import pandas as pd
+```
+### Function Parameters 
+This function has two parameters that we are going to define : 
+  - `data` : it's a dataframe that represents bacterial growth that we have to import, or generate it
+  - `time_set` : It's a time interval between measurements, by default, it's 1.
+```
+def find_80_percent_density(data, time_step=1):
+```
+### Import
+What we have to import here / or to generate is the dataframe, that from it, we are going to calculate the 80% of density in the bacterial growth
+```
+#Example of input, generating dataframe 
+data = pd.DataFrame({
+    0: [0.1, 0.2, 0.3],  # Densité à t=0
+    1: [0.4, 0.6, 0.8],  # Densité à t=1
+    2: [0.9, 1.0, 1.2],  # Densité à t=2
+})
+```
+### Output
+Normally, we should have had 3 ouputs : 
+- `max_density`
+- `time_80_percent`
+- `density_at_80`
+However, we only had one, and that's because in the return we only asked for one
+```
+   return max_density, None, None
+```
+So here is an example of the input
+```
+Densité max: 1.0
+```
+## 4th Function :  Calculates the hamming distance between two chains of characters
