@@ -205,7 +205,7 @@ def find_80_percent_density(data, time_step=1):
             return max_density, time_80_percent, density_at_80
     
     return max_density, None, None  
-#FUNCTION NUMBER 4 : Cslculates the hamming distance between two chains of characters
+#FUNCTION NUMBER 4 : Calculates the hamming distance between two chains of characters
 """
     Computes the Hamming distance between two strings of equal length.
     
