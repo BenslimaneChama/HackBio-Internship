@@ -308,6 +308,19 @@ print(f"W statistic: {stat:.2f}")
 print(f"P-value: {p_value:.3f}")
 print(f"WT Mean Time: {wt_mean:.2f} min")
 print(f"MUT Mean Time: {mut_mean:.2f} min")
+'''
+OUTPUT :
+W statistic: 171.50
+P-value: 0.775
+WT Mean Time: 663.33 min
+MUT Mean Time: 644.17 min
+'''
+'''
+INTERPRETATION :
+Based on the biostatisticall results we can conclude that, generally, there is no significant difference between mutants and wild-type, in
+terms of OD recorded, because P-values is superior than 0,05.
+Meaning that the knockout manipulation didn't affect the growth of the bacteria.
+'''
 #___________________________________________________________________________________________________________________________________________
 #STATISTICAL ANALYSIS BETWEEN MUT AND WT BY STRAIN TYPE
 strain_results = []
@@ -333,3 +346,16 @@ results_table = pd.DataFrame(strain_results)
 
 # Display results
 print(results_table)
+'''
+OUTPUT :
+Strain | WT Mean Time (min) |  MUT Mean Time (min) |W statistic| p-value
+Strain1|       757.5        |          752.5       |    17.5   | 1.000000
+Strain2|       682.5        |          615.0       |    25.0   | 0.295406
+Strain3|       550.0        |          565.0       |    17.0   | 0.935622
+'''
+'''
+INTERPRTATION : 
+Based on the biostatisticall results we can conclude that, even by strain types, there is no significant difference between mutants and wild-type, in
+terms of OD recorded, because P-values in the three cases is superior than 0,05.
+Meaning that the knockout manipulation didn't affect the growth of the 3 strains.
+'''
