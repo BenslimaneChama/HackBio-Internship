@@ -155,5 +155,44 @@ plt.show()
 ```
 ![Time to 80% Carrying Capacity by Strain and Type](figures/carryingcapacity_boxplot.png)
 
-   7. In the last step, we performed statistical tests, which are very important when interpreting graphs. The test we performed is: <b>
-Mann-Whitney U test, which allows us to objectively quantify whether the mutation affects growth, so if p < 0.05, the difference is statistically significant, and if it's the opposite we'd have no significant difference.
+   7. In the last step, we performed statistical tests, which are very important when interpreting graphs. The test we performed is: <br/>
+Mann-Whitney U test, because based on the data we have less than 30 records by strain. Which allows us to objectively quantify whether the mutation affects growth, so if p < 0.05, the difference is statistically significant, and if it's the opposite we'd have no significant difference. 
+- We did two times the test :
+   - The first statical anylsis was between MUT and WT in general
+```
+#Output
+W statistic: 171.50
+P-value: 0.775
+WT Mean Time: 663.33 min
+MUT Mean Time: 644.17 min
+```
+   - The second statical anylsis was between MUT and WT by strand type
+  
+```
+# OUTPUT :
+Strain | WT Mean Time (min) |  MUT Mean Time (min) |W statistic| p-value
+Strain1|       757.5        |          752.5       |    17.5   | 1.000000
+Strain2|       682.5        |          615.0       |    25.0   | 0.295406
+Strain3|       550.0        |          565.0       |    17.0   | 0.935622
+```
+
+---
+
+## III Interpretation 
+
+### 1. Graphic 1 (Growth curve)
+We can see that WT and MUT follow similar trajectories in the three strains, and the logarithmic scale makes it easier to observe the initial differences, but no clear trend emerges.
+
+### 2. Graphic 2 (Time to reach 80% of capacity)
+Here, we can clearly see that the dots are scattered, but WT and MUT remain close, and there's no obvious difference between the colors and shapes (WT vs. MUT).
+
+### 3. Graphic 3 (Time to reach capacity)
+As far as Strain1 is concerned, WT does seem to have a very large variance, but the median is close. However, for Strain2 and Strain3, WT and MUT are almost identical.
+
+### 4. General analysis (MUT vs WT overall)
+Based on the biostatisticall results we can conclude that, generally, there is no significant difference between mutants and wild-type, in terms of OD recorded, because P-values is superior than 0,05. <br/>
+Meaning that the knockout manipulation didn't affect the growth of the bacteria.
+
+### 5. Analysis by strain (Strain1, Strain2, Strain3)
+Based on the biostatisticall results we can conclude that, even by strain types, there is no significant difference between mutants and wild-type, in terms of OD recorded, because P-values in the three cases is superior than 0,05. <br/>
+Meaning that the knockout manipulation didn't affect the growth of the 3 strains.
