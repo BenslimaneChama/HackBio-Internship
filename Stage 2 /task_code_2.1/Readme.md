@@ -1,5 +1,5 @@
 
-# **Task 1 : Microbiology : Analysing curve growth** 
+# **Microbiology : Analysing curve growth** 
 
 ### Team members:
 *Chama Benslimane (leader)* ; GitHub profile : https://github.com/BenslimaneChama
