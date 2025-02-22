@@ -56,6 +56,7 @@ plt.legend()
 plt.show()
 ```
 ![Comparaison de la Réponse Métabolique WT vs Mutant](figures/scatter_plot.png)
+
 This plot visually highlights differences in metabolic responses between WT and mutant strains.
 
 ANSWERING THE QUESTION : How do you explain the trends you see on either direction of the plot? 
@@ -81,6 +82,7 @@ plt.legend()
 plt.show()
 ```
 ![Metabolic difference between WT vs Mutant with residuals threshold at 0,3](figures/residuals_plot.png)
+
 Outliers represent metabolites with a strong differential response, helping us focus on key biological changes.
 
 ### **4. Extracting Outlier Metabolites**
