@@ -1,11 +1,11 @@
 """
 Stage 2 raw code - HackBio Internship
 
-This code contains functions developed by our team for the Stage 2 Microbiology task in the HackBio internship:
+This code contains a problem-solving script developed by our team for the Stage 2 task_code_2.3 in the HackBio internship:
 - Chama BENSLIMANE (Leader): https://github.com/BenslimaneChama
 - Mohammad HICHAM POLO : https://github.com/MohammadHichamPolo
-It includes functions that manipulates the given datas (general data and metadata), and including the FUNCTION3 from stage 1 determining 80% density values.
-Interpretation of biostatisticall analysis is Included as comments in the code
+IThe script quantifies pesticide-induced metabolic shifts in WT/mutant strains, identifies outlier metabolites (65/108) with divergent responses, 
+and tracks their time-dependent trends, revealing conserved long-term adaptation despite initial variability.
 Interpretation of Plots is included in Readme file.
 
 Stage 2 GitHub Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20
