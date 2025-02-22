@@ -8,11 +8,11 @@ It includes functions that manipulates the given datas (general data and metadat
 Interpretation of biostatisticall analysis is Included as comments in the code
 Interpretation of Plots is included in Readme file.
 
-Stage 2 GitHub Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%201
-Task 1 code Github Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%201
-Plost images Github Repository : https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%201
+Stage 2 GitHub Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20
+Task 1 code Github Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task1
+Plost images Github Repository : https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task1/figures
 
-LinkedIn Video: https://www.linkedin.com/feed/update/urn:li:ugcPost:7297001015092932608/
+LinkedIn Video: STILLS
 """
 #___________________________________________________________________________________________________________________________________________
 # Required Modules
