@@ -46,7 +46,7 @@ plt.plot(x_vals, x_vals, color='black', linestyle='--', label="y = x")
 
 plt.xlabel("ΔM Wild Type")
 plt.ylabel("ΔM Mutant")
-plt.title("Comparaison de la Réponse Métabolique WT vs Mutant")
+plt.title("Metabolic difference between WT vs Mutant")
 plt.legend()
 plt.show()
 #___________________________________________________________________________________________________________________________________________
