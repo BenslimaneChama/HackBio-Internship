@@ -23,13 +23,14 @@ import seaborn as sns
 import requests
 from io import StringIO
 ```
-<br/>
+
 - `pandas` for data manipulations as a DataFrame.
 - `numpy` for mathematical calculation
 - `matplotlib.pyplot` & `seaborn`  for plots generations
 - `requests` to dowloas datas from an extern URL
 - `StringIO` to convert a text into a readable format with `pandas.read_csv()`
-<br/>
+
+
 ## **Importing the data**
 We import the url, which already contains the text file containing the results of a differential gene expression analysis, then download the file and store its contents as plain text. This text will then be converted into a format that can be used by `pandas`.
 <br/>
