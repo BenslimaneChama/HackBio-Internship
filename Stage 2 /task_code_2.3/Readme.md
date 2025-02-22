@@ -55,6 +55,7 @@ plt.title("Comparaison de la Réponse Métabolique WT vs Mutant")
 plt.legend()
 plt.show()
 ```
+
 ![Comparaison de la Réponse Métabolique WT vs Mutant](figures/scatter_plot.png)
 
 This plot visually highlights differences in metabolic responses between WT and mutant strains.
@@ -81,9 +82,14 @@ plt.title("Metabolic difference between WT vs Mutant with residuals threshold at
 plt.legend()
 plt.show()
 ```
+
 ![Metabolic difference between WT vs Mutant with residuals threshold at 0,3](figures/residuals_plot.png)
 
 Outliers represent metabolites with a strong differential response, helping us focus on key biological changes.
+ANSWERING THE QUESTION : What are these metabolites ?
+After running len(outliers), we observe that 65 out of 108 metabolites are classified as outliers based on the 0.3 threshold. 
+The distribution of these outliers becomes denser as ΔM increases, indicating that metabolic variations are more pronounced at higher changes. 
+Despite the ongoing metabolic impact, these outliers likely exhibit a significant difference in ΔM, suggesting that they are particularly sensitive to the treatment.
 
 ### **4. Extracting Outlier Metabolites**
 We filter and extract names of metabolites where the residuals exceed the 0.3 threshold.
@@ -105,4 +111,22 @@ plt.legend(loc="upper left", bbox_to_anchor=(1,1))
 plt.tight_layout()  
 plt.show()
 ```
+
 ![Metabolic Evolution Over 24h for 6 Selected Metabolites (WT vs MUT)](figures/metabolic_evolution.png)
+
+## Interpretation 
+### **1. Graphic 1 : Scatter Plot (Metabolic Difference Between WT vs Mutant)**
+This plot compares the metabolic changes (ΔM) between wild-type (WT) and mutant (MUT) conditions.
+The black dashed line represents the ideal case where WT and MUT have identical metabolic differences (y = x).
+Data points scattered above or below the line indicate variations in metabolism between the two conditions.
+
+### **2. Graphic 2 : Second Scatter Plot (Metabolic Difference Highlighting Residuals)**
+This plot builds on the first one by highlighting points based on a residual threshold (0.3).
+Salmon-colored points show metabolites with a significant deviation between WT and MUT, while grey points are closer to the expected y = x trend.
+This visualization helps identify which metabolites behave differently between conditions.
+
+### **3. Graphic 3 : Second Scatter Plot (Metabolic Difference Highlighting Residuals)**
+This graph tracks the metabolic intensity of six selected metabolites over 24 hours for both WT and MUT.
+Solid lines represent WT, and dashed lines represent MUT.
+Some metabolites show stable trends, while others vary over time, indicating differences in metabolic processing.
+This helps understand how metabolism evolves differently in mutants compared to the wild type.
