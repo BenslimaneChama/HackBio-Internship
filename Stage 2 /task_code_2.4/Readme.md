@@ -83,7 +83,7 @@ plt.ylabel('Count')
 plt.xticks(rotation=45)
 plt.show()
 ```
-![Frequency of Original Amino Acids](/figures/barplot_AA.png)
+![Frequency of Original Amino Acids](figures/barplot_AA.png)
 <br/>
 A pie chart is then produced to see which mutations are most frequent.
 <br/>
@@ -93,4 +93,4 @@ wedges, texts, autotexts = plt.pie(frequency_table['Frequency'], labels=frequenc
 plt.title('Proportion of Original Amino Acids', fontsize=14)
 plt.show()
 ```
-![Proportion of Original Amino Acids](/figures/piechart_AA.png)
+![Proportion of Original Amino Acids](figures/piechart_AA.png)
