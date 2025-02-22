@@ -12,7 +12,7 @@ Stage 2 GitHub Repository: https://github.com/BenslimaneChama/HackBio-Internship
 Task 1 code Github Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task1
 Plost images Github Repository : https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task1/figures
 
-LinkedIn Video: STILLS
+LinkedIn Video: STILL
 """
 #___________________________________________________________________________________________________________________________________________
 # Required Modules
