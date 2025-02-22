@@ -41,8 +41,8 @@ data = response.text
 df = pd.read_csv(StringIO(data), delimiter=r"\s+", engine="python")
 ```
 
-<br/>
 ## **-log10(p-value)**
+
 p-value, indicates the statistical significance of a gene, but volcano plot often uses `log10(p-value)` to better distinguish significant genes. As a result, p-value is very small in comparison (e.g. `p-value = 0.00001`), but after transformation, these values will become large. This makes it easier to identify statistically significant genes.
 
 ```
