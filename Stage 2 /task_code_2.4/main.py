@@ -1,7 +1,7 @@
 """
 Stage 2 raw code - HackBio Internship
 
-This code contains a problem-solving script developed by our team for the Stage 2 code_task_2.4 in the HackBio internship:
+This code contains a problem-solving script developed by our team for the Stage 2 task_code_2.4 in the HackBio internship:
 - Chama BENSLIMANE (Leader): https://github.com/BenslimaneChama
 - Mohammad HICHAM POLO : https://github.com/MohammadHichamPolo
 The script merges SIFT/FoldX datasets to pinpoint destabilizing mutations, 
