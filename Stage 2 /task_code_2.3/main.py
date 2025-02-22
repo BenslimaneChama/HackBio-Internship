@@ -50,6 +50,14 @@ plt.title("Comparaison de la Réponse Métabolique WT vs Mutant")
 plt.legend()
 plt.show()
 #___________________________________________________________________________________________________________________________________________
+'''
+ANSWERING THE QUESTION : How do you explain the trends you see on either direction of the plot? 
+The reference line y=x serves as a benchmark to assess whether the metabolic changes (ΔM) in WT and MUT conditions follow a similar trend. 
+The distribution of points closely follows this line, indicating a strong positive correlation between ΔM in both conditions. 
+However, as ΔM increases, we observe a higher density of points, suggesting that the treatment induces metabolic changes in both WT and MUT to a similar extent. 
+This means that while the treatment has a measurable impact, its effect is comparable in both conditions.
+'''
+#___________________________________________________________________________________________________________________________________________
 # Calculating Residuals and setting a threshold of 0.3 when giving a color in the scatter plot
 
 residuals = deltaM_Mutant - deltaM_WT
@@ -70,11 +78,13 @@ plt.show()
 # Separating the outliers respecting the 0.3 threshold and converting them into a list
 outliers = metabolites[np.abs(residuals) > threshold].tolist()  # Convert to list
 #___________________________________________________________________________________________________________________________________________
-#ANSWERING THE QUESTION : What are these metabolites ?
 '''
- First after running : 
-  len(outliers) 
- We see that the 0.3 threshold indicated that there is 65 out of 108 metabolites are considered as outliers, and to know these metablites we just display outliers.
+ANSWERING THE QUESTION : What are these metabolites ?
+After running len(outliers), we observe that 65 out of 108 metabolites are classified as outliers based on the 0.3 threshold. 
+The distribution of these outliers becomes denser as ΔM increases, indicating that metabolic variations are more pronounced at higher changes. 
+Despite the ongoing metabolic impact, these outliers likely exhibit a significant difference in ΔM, suggesting that they are particularly sensitive to the treatment.
+ 
+ In order to know these metablites we just display outliers.
  The output is the list of the metabolites : 
  
 ['acetylcarnitine',
@@ -183,6 +193,7 @@ if len(selected_metabolites) > 0:
     plt.show()
 #___________________________________________________________________________________________________________________________________________
 '''
+PLOT LINE INTERPRETATION :
 After randomly selecting six metabolites and plotting their evolution under WT and MUT conditions, we observe that their overall behavior follows a similar trend. 
 While slight differences appear around the 8th hour mark, the metabolic responses tend to converge as the treatment progresses to 24 hours. 
 This suggests that, despite initial variations, the long term metabolic adaptation in both conditions exhibits comparable patterns.
