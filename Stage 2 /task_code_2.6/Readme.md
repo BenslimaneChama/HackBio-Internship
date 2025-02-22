@@ -107,3 +107,9 @@ plt.show()
 ```
 
 ![Volcano Plot of Differential Expression](figures/volcano_plot_with_top5.png)
+
+
+## **FINAL INTERPRETATION :**
+Upregulated genes suggest increased extracellular matrix remodeling, apoptosis, and cardiovascular regulation.
+Downregulated genes point to reduced antiviral response, altered developmental pathways, and potential connective tissue or cardiac implications.
+If linked to a specific disease or condition, this pattern might indicate a response to infection, tissue repair mechanisms, or developmental disturbances.
