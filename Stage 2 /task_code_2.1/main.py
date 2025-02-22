@@ -9,8 +9,8 @@ Interpretation of biostatisticall analysis is Included as comments in the code
 Interpretation of Plots is included in Readme file.
 
 Stage 2 GitHub Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20
-Task_code_2.1 Github Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task1
-Plots images Github Repository : https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task1/figures
+Task_code_2.1 Github Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task_code_2.1
+Plots images Github Repository : https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task_code_2.1/figures
 
 LinkedIn Video: STILL
 """
