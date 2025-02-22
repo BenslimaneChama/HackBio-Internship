@@ -58,5 +58,18 @@ So, the main reason for this project is to compare mutants and wt, and find out 
 ## I. Functions
 As We said earlier, these functions have already been used in Stage 1, the HackBio course, but it's the way they're used that's distinctive.
 ### *1st Function*
-The main purpose of this function : is to convert raw data into a structure that is easier to analyze and plot.
-                                   
+The main purpose of this function : is to convert raw data into a structure that is easier to analyze and plot. In other words, This function converts a DataFrame where columns are curves and rows are time points into a structure where rows are curves and columns are time points.
+```
+# The fucntion :
+def convert_to_curve_time_structure(data): #data is the parameter
+```
+In this section, we reorganize the data so that time is the main axis, making it easier to access and analyze each curve. We also extract the time values, so that we can retrieve the time values to plot the curves later.
+As we saw in Stage 1, functions only work once, when you call them up with the return command.
+```
+    return transposed_data, x_values
+```
+Here we returned `transposed_data` which is : Data organized in a usable format.
+and `x_values` that is the time listed for graphs.
+### *2nd Function*
+This function converts metadata into a long format so that it is compatible with experimental data.
+
