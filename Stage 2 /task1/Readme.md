@@ -105,8 +105,54 @@ This code is called main code, because it allows us to execute required tasks in
 ```
 converted_data, x_values = convert_to_curve_time_structure(data)
 ```
-2. Secondly, we call up the second function to display the OD600 vs. Time curves: this displays a graph for each strain, differentiating between WT (green) and MUT (red) with different styles, and then using the same logarithmic scale as previously mentioned, to better visualize growth.
+2. Secondly, we call up *the second function* to display the OD600 vs. Time curves: this displays a graph for each strain, differentiating between WT (green) and MUT (red) with different styles, and then using the same logarithmic scale as previously mentioned, to better visualize growth.
 ```
 plot_strain_curves(converted_data, x_values, unit_type='min')
 ```
-3. 
+3. This is where we calculate the time to reach 80% of maximum density, so we go through all the curves (WT/MUT, all strains combined), extract the data from each curve and put them in DataFrame, then apply the `find_80_percent_density`() function to find the maximum density and the time when density will reach 80% of max. All these results are then stored in the `results` list. This calculation is very important, as it allows us to compare how quickly the different strains reach an advanced stage of growth.
+```
+ results.append({
+        'curve_id': curve_id,
+        'max_density': max_dens,
+        'time_to_80%': time_80,
+        'density_at_80%': dens_80
+    })
+```
+4. Once the results have been stored, we now organize them in a dataframe, using Pandas, which facilitates data manipulation, analysis and visualization.
+```
+results_df = pd.DataFrame(results)
+```
+5. Here we transform `process_metadata(metadata)`, which has a very large format, into a format that's easier to use. So `merge()` merges the results with the metadata to associate each curve with its strain and type (WT/MUT). Now we can compare growth times according to strain and mutation.
+
+```
+curve_metadata = process_metadata(metadata)
+results_df = results_df.merge(curve_metadata[['curve_id', 'strain', 'type']], on='curve_id')
+```
+6. 1. Here we can visualize the results, and therefore the graphs, starting with **Scatter Plot: Time to reach 80% of max density.** This graph shows directly whether WT and MUT have differences in growth rates.
+```
+plt.title('Time to 80% Carrying Capacity by Strain and Type', fontsize=14)
+plt.xlabel('Time (minutes)', fontsize=12)
+plt.ylabel('Density at 80%', fontsize=12)
+plt.grid(alpha=0.2)
+plt.legend()
+plt.show()
+```
+![Time to 80% Carrying Capacity by Strain and Type](figures/carryingcapacity_scatterplot.png) 
+
+
+  ii.  Then we'll show the **BoxPlot : Comparison of times by strain and mutation**. This statistically compares WT/MUT growth in each strain.
+```
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='strain', y='time_to_80%', hue='type', data=results_df, palette={'WT': '#2ecc71', 'MUT': '#e74c3c'})
+plt.title('Time to Reach Carrying Capacity\nby Strain and Mutation Type', pad=20)
+plt.xlabel('Strain', labelpad=15)
+plt.ylabel('Time (minutes)', labelpad=15)
+plt.legend(title='Mutation Type', frameon=False)
+sns.despine()
+plt.tight_layout()
+plt.show()
+```
+![Time to 80% Carrying Capacity by Strain and Type](figures/carryingcapacity_boxplot.png)
+
+   7. In the last step, we performed statistical tests, which are very important when interpreting graphs. The test we performed is: <b>
+Mann-Whitney U test, which allows us to objectively quantify whether the mutation affects growth, so if p < 0.05, the difference is statistically significant, and if it's the opposite we'd have no significant difference.
