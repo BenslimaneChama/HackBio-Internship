@@ -17,7 +17,7 @@ This project anlyse the growth curves of different bacterian strains from experi
 As part of this project, we used the same functions we'd done in the HackBio internship **stage 1**, on the same theme. So we used them and rearranged them.
 So this project can be divided into two parts, the part where we reuse the functions, with a slight change, and then the part with the main code.
 
-## Packages needed
+## Modules needed
 But before we get started, let's introduce the libraries we've used to execute our code.
 ```
 import pandas as pd
