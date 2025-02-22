@@ -1,4 +1,4 @@
-**# **Analysis of deleterious protein mutations** 
+# **Analysis of deleterious protein mutations** 
 
 ### Team members:
 *Chama Benslimane (leader)* ; GitHub profile : https://github.com/BenslimaneChama
