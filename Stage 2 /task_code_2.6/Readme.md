@@ -13,7 +13,7 @@ This python project was developed as part of the HackBio Internship, stage 2. It
 A volcano plot : is a graphic representation commonly used in genomic analysis. It displays statistical significance (via the p-value) as a function of the level of expression change (log2 fold change).<br/>
 This makes it possible to identify the genes most significantly regulated between two experimental conditions.
 <br/>
-## **Modules needed*
+## **Modules needed**
 That is all the librarys needed for the treatment of data and visualisation 
 ```
 import pandas as pd
