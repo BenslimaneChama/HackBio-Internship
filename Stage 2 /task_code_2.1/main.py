@@ -12,7 +12,7 @@ Stage 2 GitHub Repository: https://github.com/BenslimaneChama/HackBio-Internship
 Task_code_2.1 Github Repository: https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task_code_2.1
 Plots images Github Repository : https://github.com/BenslimaneChama/HackBio-Internship/tree/main/Stage%202%20/task_code_2.1/figures
 
-LinkedIn Video: STILL
+LinkedIn Video: https://www.linkedin.com/feed/update/urn:li:activity:7299574059170738176/
 """
 #___________________________________________________________________________________________________________________________________________
 # Required Modules
