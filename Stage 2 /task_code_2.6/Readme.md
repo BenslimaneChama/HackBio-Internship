@@ -139,8 +139,9 @@ plt.show()
 <br/>
 `EMILIN2` :Predicted to enable extracellular matrix constituent conferring elasticity. Involved in several processes, including positive regulation of angiogenesis; positive regulation of defense response to bacterium; and positive regulation of platelet aggregation. Located in extracellular region. <br/>
 <br/>
-`PI16 `   :Predicted to enable peptidase inhibitor activity. Predicted to be involved in negative regulation of peptidase activity. Predicted to act upstream of or within negative regulation of cell growth involved in cardiac muscle cell development. Predicted to be located in extracellular region. Predicted to be active in extracellular space
-C4orf45 :SPMIP2 (Sperm Microtubule Inner Protein 2) is a Protein Coding gene. Diseases associated with SPMIP2 include Hyperekplexia.<br/>
+`PI16 `   :Predicted to enable peptidase inhibitor activity. Predicted to be involved in negative regulation of peptidase activity. Predicted to act upstream of or within negative regulation of cell growth involved in cardiac muscle cell development. Predicted to be located in extracellular region. Predicted to be active in extracellular space<br/>
+<br/>
+`C4orf45 `:SPMIP2 (Sperm Microtubule Inner Protein 2) is a Protein Coding gene. Diseases associated with SPMIP2 include Hyperekplexia.<br/>
 <br/>
 `FAM180B` :Predicted to be located in extracellular region enabling protein bindings.
 <br/>
