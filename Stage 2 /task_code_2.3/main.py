@@ -156,7 +156,6 @@ Despite the ongoing metabolic impact, these outliers likely exhibit a significan
 #___________________________________________________________________________________________________________________________________________
 # Generating the Line plot that spans from 0h treatment to 8h and 24hr of 6 randomly selected metabolites from the outliers list.
 # FIRST : We define the time points we want to plot. 
-# Define timepoints and labels for line plots
 wt_timepoints = ["WT_DMSO_1", "WT_pesticide_8h_1", "WT_pesticide_24h_1"]
 mut_timepoints = ["mutant_DMSO_1", "mutant_pesticide_8h_1", "mutant_pesticide_24h_1"]
 time_labels = ["0h", "8h", "24h"]
