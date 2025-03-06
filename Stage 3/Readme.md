@@ -215,7 +215,7 @@ pip install pandas scikit-learn xgboost
 Run the script using Python:
 
 ```bash
-python stage3Ai.py
+python uni_wellness_predictor.py
 ```
 
 ### Input Requirements
