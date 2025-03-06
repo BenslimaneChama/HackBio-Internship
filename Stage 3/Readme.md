@@ -82,15 +82,11 @@ Now that we've taken a look at all the information in the dataset, we can see th
 
 In our original code, available as a Jupyter notebook on GitHub, we experimented with three different models, testing various feature combinations to achieve the best accuracy and predictions. Here, we present only the two best-performing models. For further details, you can refer to the provided Jupyter notebook.
 --------------------------------
-## Logistic Regression with All Features
+## Minimum number of predictive variables invistigation
 
-We decided to start with Logistic Regression, as it is a simple yet effective model for making binary Yes or No decisions.
+To invistigate the number of variables needed to explain depression, we utilized Principal Component Analysis (PCA) for 2D visualization, selecting only the principal components (PCs) necessary for this representation. PCA's job is to reduce the number of features by creating new "principal components" that capture the most variance (information) in the data. And in order to visualise thoe data in 2D, we chosed 2 Principal components 1 and 2.
 
-In this approach, we did not apply Recursive Feature Elimination (RFE), meaning all features were included for training and prediction.
-
-Next, we utilized Principal Component Analysis (PCA) for 2D visualization, selecting only the principal components (PCs) necessary for this representation. A PCA it's job is to reduce the number of features by creating new "principal components" that capture the most variance (information) in the data. And in order to visualise thoe data in 2D, we chosed 2 Principal components 1 and 2.
-
-Through this, we observed that PC1 selected three dominant features that had the most influence (Financial stress, Suicidal thoughts & Academic pressure), while PC2 highlighted three other important variables that describe different aspects of the data (CGPA, study satisfaction & Sleep Duration). This helped us identify the most significant factors contributing to depression and guided our feature selection process.
+Through this, we observed that PC1 selected three dominant features that had the most influence (Financial stress, Suicidal thoughts & Academic pressure), while PC2 highlighted three other important variables that describe different aspects of the data (CGPA, study satisfaction & Sleep Duration). 
 
 ![Logistic Regression All features](Figures/Logistic_Regreion_PCA_Allft.png)
 
@@ -104,6 +100,40 @@ So we decided to separate the genders to see if visualization would ever be easi
 
 As a matter of fact, we could see that each color starts to take a side, one dominant on the left and the other on the right; although there's no line separating the two, it shows that the selected features can indeed detect depression and predict whether a person is affected or not.
 
+This helped us conclude that only 6 variables could be enough to distinguish between depressed and healthy students guiding our feature selection process.
+## Investigation of Predictive Variables and Benchmarking of Trained Models
+In this section, we conducted a benchmark analysis comparing three Machine Learning models: Logistic Regression, Random Forest, and XGBoost. The benchmarking process involved training these models using three different approaches:
+
+1. All Features: Training the models with the complete set of data features.
+2. Selected Features: Utilizing only six features selected through Recursive Feature Elimination (RFE), based on prior Principal Component Analysis (PCA) results indicating that this subset was sufficient.
+3. Single Best Feature: Training each model using only the most influential feature identified by RFE, allowing us to assess its individual contribution and overall impact on detecting depression symptoms in students.
+## Training results of all classifications modeles
+
+| Model                                      | Features Used                                                      | Accuracy (%) | Precision (0/1) | Recall (0/1) | F1-score (0/1) | Macro Avg F1 | Weighted Avg F1 | False Positives | False Negatives |
+|--------------------------------------------|--------------------------------------------------------------------|--------------|----------------|-------------|---------------|--------------|----------------|----------------|----------------|
+| **Logistic Regression (All Features)**     | All features                                                      | **84.34**    | 0.83 / 0.85    | 0.78 / 0.89 | 0.81 / 0.87   | 0.84         | 0.84           | 514            | 358            |
+| **Logistic Regression (RFE - 6 Features)** | Academic Pressure, Study Satisfaction, Dietary Habits, Suicidal Thoughts, Financial Stress, Family History | 83.92        | 0.83 / 0.84    | 0.77 / 0.89 | 0.80 / 0.87   | 0.83         | 0.84           | 529            | 366            |
+| **Logistic Regression (RFE - 1 Feature)**  | Suicidal Thoughts                                                 | 78.68        | 0.78 / 0.79    | 0.68 / 0.86 | 0.73 / 0.83   | 0.78         | 0.78           | 741            | 446            |
+| **Random Forest (All Features)**           | All features                                                      | 84.25        | 0.83 / 0.85    | 0.78 / 0.89 | 0.80 / 0.87   | 0.84         | 0.84           | 515            | 362            |
+| **Random Forest (RFE - 6 Features)**       | Age, City, Academic Pressure, CGPA, Suicidal Thoughts, Financial Stress | 81.91   | 0.80 / 0.83    | 0.76 / 0.86 | 0.78 / 0.85   | 0.81         | 0.82           | 563            | 444            |
+| **Random Forest (RFE - 1 Feature)**        | Suicidal Thoughts                                                 | 78.68        | 0.78 / 0.79    | 0.68 / 0.86 | 0.73 / 0.83   | 0.78         | 0.78           | 741            | 446            |
+| **XGBoost (All Features)**                 | All features                                                      | 83.76        | 0.82 / 0.85    | 0.78 / 0.88 | 0.80 / 0.86   | 0.83         | 0.84           | 518            | 386            |
+| **XGBoost (RFE - 6 Features)**             | Age, Academic Pressure, Study Satisfaction, Dietary Habits, Suicidal Thoughts, Financial Stress | 84.16 | 0.82 / 0.85    | 0.79 / 0.88 | 0.81 / 0.87   | 0.84         | 0.84           | 492            | 390            |
+| **XGBoost (RFE - 1 Feature)**              | Suicidal Thoughts                                                 | 78.46        | 0.78 / 0.79    | 0.68 / 0.86 | 0.72 / 0.82   | 0.78         | 0.78           | 743            | 456            |
+
+This table summarizes all model performance metrics and selected features when RFE is applied. Key insights from the results include:
+
+✅ Best Overall Model → Logistic Regression (All Features) with 84.34% Accuracy
+✅ Best Model After Feature Selection (RFE) → XGBoost with RFE (6 Features) achieving 84.16% Accuracy
+❌ Worst Performing Models → All models trained with only 1 feature, reducing accuracy to approximately 78%
+❌ Most Common False Prediction Trend → Increased false negatives (missed depressed students) when reducing the number of features
+✅ Key Predictive Feature → "Have you ever had suicidal thoughts ?" was consistently selected by all models when RFE = 1, demonstrating an individual contribution of ~78%
+
+## Chosen Trained Classifiers to predict depression and determining top explaining variables:
+### ALL FEATURES LOGISTIC REGRESSION
+We decided to consider Logistic Regression as it is a simple yet effective model for making binary Yes or No decisions.
+
+In this approach, we did not apply Recursive Feature Elimination (RFE), meaning all features were included for training and prediction.
 To find out how reliable this model is, we used the Confusion matrix, which gives us values on its accuracy, but also how many errors it made. 
 The result of its accuracy was 0.8434, which means that the logistic regression performed very well, with an accuracy of 84%, which means that we were able to select features that contribute very well to the prediction of depression.
 
@@ -112,8 +142,8 @@ The result of its accuracy was 0.8434, which means that the logistic regression 
 For the confusion matrix, we obtained results of 1806 true negatives and 2889 true positives, values almost three times higher than the false predictions.
 
 ---------------
-## XGBoost With RFE = 6 
-Following the same steps, this time we used another model: XGBoost. This is one of the most powerful machine learning algorithms, offering increased accuracy and efficiency. Using an optimized gradient reinforcement technique, it reduces errors by using a reinforcement framework. It handles missing values well, prevents over-fitting through regularization and works efficiently on large datasets. Given its performance, we used it as the final model to maximize accuracy and refine our understanding of depression prediction.
+### XGBoost WITH RFE = 6
+Following the same steps, this time we used another model: *XGBoost* . This is one of the most powerful machine learning algorithms, offering increased accuracy and efficiency. Using an optimized gradient reinforcement technique, it reduces errors by using a reinforcement framework. It handles missing values well, prevents over-fitting through regularization and works efficiently on large datasets. Given its performance, we used it as the final model to maximize accuracy and refine our understanding of depression prediction.
 
 So here we selected 6 features, thanks to RFE, and then train our machine with them.
 The results show that XGBoost had chosen features which are very logical, and which would indeed have a great impact on the cause of depression (Age, Academic pressure, Study satisfaction, Dietary Habits, Suicidal thoughts, and Financial stress).
@@ -132,30 +162,23 @@ As with logistic regression, we have calculated Confusion metrix, to know its ac
 
 The results show that its accuracy is very high, at around 84.15%, and with a very low error rate, compared to the 8 other models we ran, and this by working with only a few features, not like Logistic Regression, which has the highest score, but with all the features.
 
-## Conclusion of all classifications modeles
+## Answerring Questions :
+### Can you describe what features determine depression in university students?
+PCA plots revealed no clear separation between depressed and non-depressed students, highlighting the complexity of depression, which cannot be accurately predicted using just one or two variables. However, certain features show strong correlations with depression. Notably, suicidal thoughts were consistently selected as the most influential predictor when RFE = 1, contributing approximately 78% to model performance.
 
-| Model                                      | Features Used                                                      | Accuracy (%) | Precision (0/1) | Recall (0/1) | F1-score (0/1) | Macro Avg F1 | Weighted Avg F1 | False Positives | False Negatives |
-|--------------------------------------------|--------------------------------------------------------------------|--------------|----------------|-------------|---------------|--------------|----------------|----------------|----------------|
-| **Logistic Regression (All Features)**     | All features                                                      | **84.34**    | 0.83 / 0.85    | 0.78 / 0.89 | 0.81 / 0.87   | 0.84         | 0.84           | 514            | 358            |
-| **Logistic Regression (RFE - 6 Features)** | Academic Pressure, Study Satisfaction, Dietary Habits, Suicidal Thoughts, Financial Stress, Family History | 83.92        | 0.83 / 0.84    | 0.77 / 0.89 | 0.80 / 0.87   | 0.83         | 0.84           | 529            | 366            |
-| **Logistic Regression (RFE - 1 Feature)**  | Suicidal Thoughts                                                 | 78.68        | 0.78 / 0.79    | 0.68 / 0.86 | 0.73 / 0.83   | 0.78         | 0.78           | 741            | 446            |
-| **Random Forest (All Features)**           | All features                                                      | 84.25        | 0.83 / 0.85    | 0.78 / 0.89 | 0.80 / 0.87   | 0.84         | 0.84           | 515            | 362            |
-| **Random Forest (RFE - 6 Features)**       | Age, City, Academic Pressure, CGPA, Suicidal Thoughts, Financial Stress | 81.91   | 0.80 / 0.83    | 0.76 / 0.86 | 0.78 / 0.85   | 0.81         | 0.82           | 563            | 444            |
-| **Random Forest (RFE - 1 Feature)**        | Suicidal Thoughts                                                 | 78.68        | 0.78 / 0.79    | 0.68 / 0.86 | 0.73 / 0.83   | 0.78         | 0.78           | 741            | 446            |
-| **XGBoost (All Features)**                 | All features                                                      | 83.76        | 0.82 / 0.85    | 0.78 / 0.88 | 0.80 / 0.86   | 0.83         | 0.84           | 518            | 386            |
-| **XGBoost (RFE - 6 Features)**             | Age, Academic Pressure, Study Satisfaction, Dietary Habits, Suicidal Thoughts, Financial Stress | 84.16 | 0.82 / 0.85    | 0.79 / 0.88 | 0.81 / 0.87   | 0.84         | 0.84           | 492            | 390            |
-| **XGBoost (RFE - 1 Feature)**              | Suicidal Thoughts                                                 | 78.46        | 0.78 / 0.79    | 0.68 / 0.86 | 0.72 / 0.82   | 0.78         | 0.78           | 743            | 456            |
+The most significant features, as identified by XGBoost, include:
 
-This table explains in detail why we chose the two models discussed in this read.me
+Age
+Academic Pressure
+Study Satisfaction
+Dietary Habits
+Suicidal Thoughts
+Financial Stress
+### Can you build a classification model to accurately predict depressed student?
+The XGBoost model with RFE (6 features) was selected as the most efficient classification model. It achieves nearly the same accuracy as the Logistic Regression model trained on all features while requiring fewer inputs and maintaining the lowest False Positive Rate among all trained models.
 
-## The features that detects depression
-All PCA plots showed no clear separation, highlighting the complexity of depression, which cannot be accurately predicted using just one or two variables. However, certain features exhibit a strong correlation with depression. For instance, suicidal thoughts were consistently selected by all models when RFE = 1, with an individual contribution of approximately 79%.
+However, the Logistic Regression model trained on all features remains the most accurate overall. Users can opt for this model if they are willing to input all 13 features for prediction.
+### What would you tell people to watch out for if they were depressed?
+Based on this dataset, students already experiencing depression should pay attention to the six key predictive features. However, many of these, such as age and past suicidal thoughts, are unchangeable. Among the selected features, dietary habits stand out as the only modifiable factor.
 
-The most significant features remain those identified by XGBoost:
-
-  - Age
-  - Academic Pressure
-  - Study Satisfaction
-  - Dietary Habits
-  - Suicidal Thoughts
-  - Financial Stress
+Improving dietary habits may be a practical step for both managing and preventing depression.
