@@ -123,11 +123,11 @@ In this section, we conducted a benchmark analysis comparing three Machine Learn
 
 This table summarizes all model performance metrics and selected features when RFE is applied. Key insights from the results include:
 
-✅ Best Overall Model → Logistic Regression (All Features) with 84.34% Accuracy
-✅ Best Model After Feature Selection (RFE) → XGBoost with RFE (6 Features) achieving 84.16% Accuracy
-❌ Worst Performing Models → All models trained with only 1 feature, reducing accuracy to approximately 78%
-❌ Most Common False Prediction Trend → Increased false negatives (missed depressed students) when reducing the number of features
-✅ Key Predictive Feature → "Have you ever had suicidal thoughts ?" was consistently selected by all models when RFE = 1, demonstrating an individual contribution of ~78%
+✅ Best Overall Model → Logistic Regression (All Features) with 84.34% Accuracy. 
+✅ Best Model After Feature Selection (RFE) → XGBoost with RFE (6 Features) achieving 84.16% Accuracy. 
+❌ Worst Performing Models → All models trained with only 1 feature, reducing accuracy to approximately 78%. 
+❌ Most Common False Prediction Trend → Increased false negatives (missed depressed students) when reducing the number of features. 
+✅ Key Predictive Feature → "Have you ever had suicidal thoughts ?" was consistently selected by all models when RFE = 1, demonstrating an individual contribution of ~78%. 
 
 ## Chosen Trained Classifiers to predict depression and determining top explaining variables:
 ### ALL FEATURES LOGISTIC REGRESSION
