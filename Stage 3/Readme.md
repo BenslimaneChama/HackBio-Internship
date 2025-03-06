@@ -13,7 +13,7 @@ This project is part of the Stage 3 HackBio Internship, focusing on neuroscience
 
 what we did in this project :
    - Data preprocessing and exploration
-   - Machine learning classification models
+   - Benchmark of 3 Machine learning classification models
    - Biostatistical analysis of relevant factors
    - Visualization and interpretation of results
 ## Table of Contents
