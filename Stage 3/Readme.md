@@ -29,6 +29,7 @@ what we did in this project :
    - [Can you describe what features determine depression in university students?](#Can-you-describe-what-features-determine-depression-in-university-students?)
    - [Can you build a classification model to accurately predict depressed student?](#Can-you-build-a-classification-model-to-accurately-predict-depressed-student?)
    - [What would you tell people to watch out for if they were depressed?](#What-would-you-tell-people-to-watch-out-for-if-they-were-depressed?)
+10. [How to Use the University Student Depression Prediction System](#How-to-Use-the-University-Student-Depression-Prediction-System)
 -------------------
 ## Modules needed
 Here is the modules that we used in order to execute our code : 
@@ -201,3 +202,67 @@ However, the Logistic Regression model trained on all features remains the most 
 Based on this dataset, students already experiencing depression should pay attention to the six key predictive features. However, many of these, such as age and past suicidal thoughts, are unchangeable. Among the selected features, dietary habits stand out as the only modifiable factor.
 
 Improving dietary habits may be a practical step for both managing and preventing depression.
+## How to Use the University Student Depression Prediction System
+
+### Requirements
+Ensure you have the following Python libraries installed:
+
+```bash
+pip install pandas scikit-learn xgboost
+```
+
+### Running the Script
+Run the script using Python:
+
+```bash
+python stage3Ai.py
+```
+
+### Input Requirements
+The system provides two models for depression prediction:
+1. **XGBoost Model (6 features)** – Selected features for faster evaluation.
+2. **Logistic Regression Model (Full Features)** – More detailed analysis.
+
+When prompted, enter your choice:
+- Press **Enter** for XGBoost.
+- Type `'LR'` and press **Enter** for Logistic Regression.
+
+#### XGBoost Model Inputs
+| Feature               | Type   | Valid Range / Values |
+|----------------------|--------|----------------------|
+| Age                  | `float` | Any positive number |
+| Academic Pressure    | `float` | 0-5                 |
+| Study Satisfaction   | `float` | 0-5                 |
+| Dietary Habits       | `str`   | Healthy, Moderate, Others, Unhealthy |
+| Suicidal Thoughts    | `str`   | Yes, No             |
+| Financial Stress     | `float` | 0-5                 |
+
+#### Logistic Regression Model Inputs
+| Feature                     | Type   | Valid Range / Values |
+|----------------------------|--------|----------------------|
+| Gender                      | `str`   | Male, Female |
+| Age                          | `float` | Any positive number |
+| City                         | `str`   | (Choose from list of valid cities) |
+| Academic Pressure            | `float` | 0-5 |
+| CGPA                         | `float` | Any positive number |
+| Study Satisfaction           | `float` | 0-5 |
+| Sleep Duration               | `str`   | Less than 5 hours, 5-6 hours, 7-8 hours, More than 8 hours, Others |
+| Dietary Habits               | `str`   | Healthy, Moderate, Others, Unhealthy |
+| Degree                       | `str`   | (User-defined) |
+| Suicidal Thoughts            | `str`   | Yes, No |
+| Work/Study Hours             | `float` | Any positive number |
+| Financial Stress             | `float` | 0-5 |
+| Family History of Mental Illness | `str`   | Yes, No |
+
+### Output
+After entering the inputs, the system will display:
+- **Prediction Result**: "Likely Depressed" or "Not Likely Depressed"
+- **Probability of Depression**: A percentage indicating confidence in the prediction.
+
+### Notes
+- Ensure numerical values are entered correctly (e.g., no letters in numerical fields).
+- String inputs must match the expected categories exactly.
+- Invalid inputs will prompt re-entry.
+
+For any issues, refer to the dataset structure and input expectations.
+
