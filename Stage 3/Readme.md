@@ -25,7 +25,10 @@ what we did in this project :
 8. [Chosen Trained Classifiers to Predict Depression](#chosen-trained-classifiers-to-predict-depression-and-determining-top-explaining-variables)  
    - [All Features Logistic Regression](#all-features-logistic-regression)  
    - [XGBoost with RFE = 6](#xgboost-with-rfe--6)  
-9. [Answering Questions](#Answering-Questions)  
+9. [Answering Questions](#Answering-Questions)
+   - [Can you describe what features determine depression in university students?](#Can-you-describe-what-features-determine-depression-in-university-students?)
+   - [Can you build a classification model to accurately predict depressed student?](#Can-you-build-a-classification-model-to-accurately-predict-depressed-student?)
+   - [What would you tell people to watch out for if they were depressed?](#What-would-you-tell-people-to-watch-out-for-if-they-were-depressed?)
 -------------------
 ## Modules needed
 Here is the modules that we used in order to execute our code : 
