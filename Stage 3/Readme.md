@@ -25,7 +25,7 @@ what we did in this project :
 8. [Chosen Trained Classifiers to Predict Depression](#chosen-trained-classifiers-to-predict-depression-and-determining-top-explaining-variables)  
    - [All Features Logistic Regression](#all-features-logistic-regression)  
    - [XGBoost with RFE = 6](#xgboost-with-rfe--6)  
-9. [Answering Questions](#answering-questions)  
+9. [Answering Questions](#Answering-questions)  
 -------------------
 ## Modules needed
 Here is the modules that we used in order to execute our code : 
