@@ -2,7 +2,9 @@
 
 ### Team members:
 *Chama Benslimane (leader)* ; GitHub profile : https://github.com/BenslimaneChama
+
 and
+
 *Mohammad Hicham Polo* ; GitHub profile : https://github.com/MohammadHichamPolo
 
 ## Project Overview
@@ -188,16 +190,20 @@ PCA plots revealed no clear separation between depressed and non-depressed stude
 
 The most significant features, as identified by XGBoost, include:
 
-Age
-Academic Pressure
-Study Satisfaction
-Dietary Habits
-Suicidal Thoughts
-Financial Stress
+Age,
+Academic Pressure,
+Study Satisfaction,
+Dietary Habits,
+Suicidal Thoughts,
+Financial Stress.
 ### Can you build a classification model to accurately predict depressed student?
 The XGBoost model with RFE (6 features) was selected as the most efficient classification model. It achieves nearly the same accuracy as the Logistic Regression model trained on all features while requiring fewer inputs and maintaining the lowest False Positive Rate among all trained models.
 
-However, the Logistic Regression model trained on all features remains the most accurate overall. Users can opt for this model if they are willing to input all 13 features for prediction.
+Meanwhile the Logistic Regression model trained on all features remains the most accurate overall. Users can opt for this model if they are willing to input all 13 features for prediction. 
+
+However, the user may come from a city or hold a degree that is entirely different from those found in the data used to train the models.
+
+This also explains why the XGBoost model with six selected features is considered the default model, as it requires features that are available for any individual.
 ### What would you tell people to watch out for if they were depressed?
 Based on this dataset, students already experiencing depression should pay attention to the six key predictive features. However, many of these, such as age and past suicidal thoughts, are unchangeable. Among the selected features, dietary habits stand out as the only modifiable factor.
 
