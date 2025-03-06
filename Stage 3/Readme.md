@@ -14,6 +14,18 @@ what we did in this project :
    - Machine learning classification models
    - Biostatistical analysis of relevant factors
    - Visualization and interpretation of results
+## Table of Contents
+1. [Project Overview](#project-overview)  
+2. [Modules Needed](#modules-needed)  
+3. [Data Importing](#data-importing)  
+4. [Data Treatment](#data-treatement)  
+5. [Minimum Number of Predictive Variables Investigation](#minimum-number-of-predictive-variables-invistigation)  
+6. [Investigation of Predictive Variables and Benchmarking of Trained Models](#investigation-of-predictive-variables-and-benchmarking-of-trained-models)  
+7. [Training Results of All Classification Models](#training-results-of-all-classifications-modeles)  
+8. [Chosen Trained Classifiers to Predict Depression](#chosen-trained-classifiers-to-predict-depression-and-determining-top-explaining-variables)  
+   - [All Features Logistic Regression](#all-features-logistic-regression)  
+   - [XGBoost with RFE = 6](#xgboost-with-rfe--6)  
+9. [Answering Questions](#answering-questions)  
 -------------------
 ## Modules needed
 Here is the modules that we used in order to execute our code : 
@@ -166,7 +178,7 @@ As with logistic regression, we have calculated Confusion metrix, to know its ac
 
 The results show that its accuracy is very high, at around 84.15%, and with a very low error rate, compared to the 8 other models we ran, and this by working with only a few features, not like Logistic Regression, which has the highest score, but with all the features.
 
-## Answerring Questions :
+## Answering Questions :
 ### Can you describe what features determine depression in university students?
 PCA plots revealed no clear separation between depressed and non-depressed students, highlighting the complexity of depression, which cannot be accurately predicted using just one or two variables. However, certain features show strong correlations with depression. Notably, suicidal thoughts were consistently selected as the most influential predictor when RFE = 1, contributing approximately 78% to model performance.
 
