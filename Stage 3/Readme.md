@@ -27,8 +27,11 @@ what we did in this project :
    - [Female Model Inputs](#female-model-inputs)
    - [Male Model Inputs](#male-model-inputs)
 5. [Output](#output)
-6. [Dependencies](#dependencies)
-7. [Running the Script](#running-the-script)
+6. [Confusion Matrix Analysis](#Confusion_Matrix_Analysis)
+   - [Female Model Confusion Matrix](#Female-Model-Confusion-Matrix)
+   - [Male Model Confusion Matrix](#Male-Model-Confusion-Matrix)
+8. [Dependencies](#dependencies)
+9. [Running the Script](#running-the-script)
 
 -------------------
 # University Student Depression Prediction System
@@ -85,7 +88,18 @@ The following variables need to be inputted:
 The model will generate a prediction based on the provided inputs:
 - **Prediction Result:** Displays whether the individual is likely to be depressed or not.
 - **Probability of Depression:** Displays the probability percentage.
+## Confusion Matrix Analysis
+To evaluate the performance of both models, confusion matrices were generated for the male and female models. These matrices provide insight into the model’s accuracy, precision, recall, and F1-score.
 
+### Female Model Confusion Matrix
+
+![female cfusion matrix]()
+
+### Male Model Confusion Matrix
+
+![male cfusion matrix]()
+
+Interpretation remains the same as for the female model. The confusion matrices help determine how well the models distinguish between depressed and non-depressed students. (more details are shown in the notebooks)
 ## Dependencies
 Ensure you have the following Python libraries installed:
 ```bash
