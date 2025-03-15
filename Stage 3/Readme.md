@@ -93,11 +93,11 @@ To evaluate the performance of both models, confusion matrices were generated fo
 
 ### Female Model Confusion Matrix
 
-![female cfusion matrix](stage3/figures/female_confusion.png)
+![Female Confusion Matrix](stage3/figures/female_confusion.png)
 
 ### Male Model Confusion Matrix
 
-![male cfusion matrix](stage3/figures/female_confusion.png)
+![Male Confusion Matrix](stage3/figures/male_confusion.png)
 
 Interpretation remains the same as for the female model. The confusion matrices help determine how well the models distinguish between depressed and non-depressed students. (more details are shown in the notebooks)
 ## Dependencies
